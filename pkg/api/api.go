@@ -380,6 +380,7 @@ func HandleQuery(query string, c *gin.Context) {
 	case "xml":
 		c.XML(200, result)
 	default:
+		result.Truncate()
 		c.JSON(200, result)
 	}
 }

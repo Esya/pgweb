@@ -57,6 +57,12 @@ func (res *Result) PrepareBigints() {
 	}
 }
 
+func (res* Result) Truncate() {
+	if len(res.Rows) > 1001 {
+		res.Rows = res.Rows[0:1000]
+	}
+}
+
 func (res *Result) Format() []map[string]interface{} {
 	var items []map[string]interface{}
 
